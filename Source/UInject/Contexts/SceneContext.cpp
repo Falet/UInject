@@ -6,6 +6,7 @@
 #include "ActorContext.h"
 #include "Kismet/GameplayStatics.h"
 #include "UInject/Container/ToolsForContainer.h"
+#include "UInject/Container/UDiContainer.h"
 #include "UInject/Factory/ActorInjection.h"
 
 void ASceneContext::PostInitializeComponents()

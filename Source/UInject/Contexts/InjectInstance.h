@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "InjectInstance.generated.h"
 
+class UInstaller;
 class ASceneContext;
 /**
  * 
