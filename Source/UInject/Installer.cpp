@@ -2,14 +2,17 @@
 
 
 #include "Installer.h"
+#include "Public/MyStruct.h"
 
-#include "Contexts/ActorContext.h"
-class FTriggeredOnConstruction;
 
 UInstaller::UInstaller()
 {
 }
 
 void UInstaller::InstallBindingsInCPP(UDiContainer* actorContainer)
+{
+}
+
+void UInstaller::Test(FMyStruct gdfg)
 {
 }

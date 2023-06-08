@@ -7,6 +7,7 @@
 #include "Installer.generated.h"
 
 
+struct FMyStruct;
 class UDiContainer;
 
 UCLASS(BlueprintType, Blueprintable, ClassGroup=(Utility, Common), meta=(BlueprintSpawnableComponent))
@@ -22,5 +23,6 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void InstallBindingsInBlueprint(UDiContainer* actorContainer);
 
-	//void Test(FTriggeredOnConstruction gdfg);
+	UFUNCTION()
+	void Test(FMyStruct gdfg);
 };
