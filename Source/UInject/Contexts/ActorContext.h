@@ -3,10 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "SceneContext.h"
-#include "Components/ActorComponent.h"
-#include "UInject/Installer.h"
 #include "ActorContext.generated.h"
+
+class UInstaller;
+class UDiContainer;
+class ASceneContext;
 
 UCLASS(ClassGroup=(Utility, Common), meta=(BlueprintSpawnableComponent), Blueprintable, BlueprintType)
 class UINJECT_API UActorContext : public UActorComponent

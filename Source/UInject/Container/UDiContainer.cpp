@@ -1,6 +1,6 @@
 ﻿#include "UDiContainer.h"
 
-#include "UInject/MyInterface.h"
+#include "UInject/Factory/InjectFactory.h"
 
 void** UDiContainer::FindObjectInContainer(FProperty* fProperty)
 {
@@ -88,7 +88,7 @@ void UDiContainer::BindInterface(TSubclassOf<UInterface> interfaceUClass, UObjec
 		{
 			TScriptInterface<IInterface>* interWrapper = new TScriptInterface<IInterface>();
 			interWrapper->SetObject(interfaceObj);
-			interWrapper->SetInterface(interfaceObj->GetInterfaceAddress(inter));
+			interWrapper->SetInterface((IInterface*)interfaceObj->GetInterfaceAddress(inter));
 			FString className = "<I" + interfaceUClass->GetName() + ">";
 			if (CheckDuplicateInContainers(className))
 			{

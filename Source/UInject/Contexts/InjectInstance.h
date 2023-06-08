@@ -2,12 +2,10 @@
 
 #pragma once
 
-#include "SceneContext.h"
 #include "CoreMinimal.h"
-#include "UInject/Installer.h"
-#include "Kismet/GameplayStatics.h"
 #include "InjectInstance.generated.h"
 
+class ASceneContext;
 /**
  * 
  */

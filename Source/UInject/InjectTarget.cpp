@@ -3,6 +3,8 @@
 
 #include "InjectTarget.h"
 
+#include "Contexts/ActorContext.h"
+
 void AInjectTarget::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
@@ -41,10 +43,5 @@ void AInjectTarget::PostRegisterAllComponents()
 {
 	Super::PostRegisterAllComponents();
 	auto dfg = GetComponents();
-}
-
-void AInjectTarget::TestInjectionCpp(TScriptInterface<IMyInterface> inter)
-{
-	FString name = inter.GetObject()->GetName();
 }
 

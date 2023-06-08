@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "InjectFactory.h"
-#include "UObject/Object.h"
 #include "TestFactory.generated.h"
 
 /**

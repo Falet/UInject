@@ -2,7 +2,6 @@
 #include "UInject/Bindings/BindUClassInject.h"
 #include "UInject/Bindings/BindUInterfaceInject.h"
 #include "UInject/Bindings/BindUStructInject.h"
-#include "UInject/Factory/InjectFactory.h"
 
 #include "UDiContainer.generated.h"
 

@@ -1,7 +1,12 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "SceneContext.h"
+
+#include "UInject/Installer.h"
+#include "ActorContext.h"
+#include "Kismet/GameplayStatics.h"
+#include "UInject/Container/ToolsForContainer.h"
+#include "UInject/Factory/ActorInjection.h"
 
 void ASceneContext::PostInitializeComponents()
 {
@@ -130,7 +135,7 @@ void ASceneContext::OnConstructionActor(AActorInjection* InActor)
 {
 	RegisterActor(InActor);
 	//InActor->TriggeredOnConstruction.Remove(ActorOnConstructionDelegate.GetHandle());
-	InActor->test.GetPublicEvent().Remove(ActorOnConstructionDelegate.GetHandle());
+	InActor->TriggeredOnConstruction.Remove(ActorOnConstructionDelegate.GetHandle());
 }
 
 void ASceneContext::PreInitializeActor(AActor* InActor)
@@ -144,7 +149,7 @@ void ASceneContext::PreInitializeActor(AActor* InActor)
 	{
 		//actorInjection->GetEvent().Broadcast(actorInjection);
 		//actorInjection->TriggeredOnConstruction.Add(ActorOnConstructionDelegate);
-		actorInjection->test.GetPublicEvent().Add(ActorOnConstructionDelegate);
+		actorInjection->TriggeredOnConstruction.Add(ActorOnConstructionDelegate);
 	}
 	
 	RegisterActor(InActor);

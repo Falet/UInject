@@ -2,6 +2,8 @@
 
 
 #include "InjectInstance.h"
+#include "SceneContext.h"
+#include "Kismet/GameplayStatics.h"
 
 
 UInjectInstance::UInjectInstance()

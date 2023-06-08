@@ -3,15 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-#include "UInject/Installer.h"
-#include "UInject/Factory/ActorInjection.h"
-#include "ActorContext.h"
-#include "Kismet/GameplayStatics.h"
-#include "UInject/Container/ToolsForContainer.h"
 #include "SceneContext.generated.h"
 
-#define UFUNC()
+class UInstaller;
+class UDiContainer;
+class AActorInjection;
+class UActorContext;
 
 UCLASS()
 class UINJECT_API ASceneContext : public AActor
@@ -38,6 +35,7 @@ private:
 	DECLARE_MULTICAST_DELEGATE_OneParam(FOnActorInjectionSpawned, AActorInjection*);
 	TArray<UActorContext*> _actorContexts;
 	FOnActorInjectionSpawned::FDelegate ActorOnConstructionDelegate;
+	
 	UPROPERTY()
 	UDiContainer* _container;
 	
@@ -45,5 +43,4 @@ private:
 	TArray<UInstaller*> _installers = TArray<UInstaller*>();
 	
 	virtual void PreInitializeComponents() override;
-
 };

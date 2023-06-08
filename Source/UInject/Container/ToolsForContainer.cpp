@@ -1,4 +1,5 @@
 ﻿#include "ToolsForContainer.h"
+#include "UDiContainer.h"
 
 void ToolsForContainer::Inject(const UClass* ReflectionClass, UDiContainer* container, UObject* obj)
 {

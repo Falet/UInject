@@ -2,9 +2,9 @@
 
 
 #include "ActorContext.h"
-#include "SceneContext.h"
 #include "Engine/SCS_Node.h"
-#include "UInject/TestInstaller.h"
+#include "Components/ActorComponent.h"
+#include "UInject/Installer.h"
 #include "UInject/Container/ToolsForContainer.h"
 #include "UInject/Container/UDiContainer.h"
 
@@ -53,7 +53,7 @@ void UActorContext::RegisterChild(UActorContext* child)
 	child->Injection();
 }
 
-UActorComponent*  UActorContext::FindDefaultComponentByClass(const TSubclassOf<AActor> InActorClass,
+UActorComponent* UActorContext::FindDefaultComponentByClass(const TSubclassOf<AActor> InActorClass,
                                                              const TSubclassOf<UActorComponent> InComponentClass)
 {
 	if (!IsValid(InActorClass))

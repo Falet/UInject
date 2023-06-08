@@ -3,11 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MyInterface.h"
-#include "Contexts/ActorContext.h"
-#include "GameFramework/Actor.h"
-#include "TestAll/InterfaceInheritanceChild1.h"
 #include "InjectTarget.generated.h"
+
+class UActorContext;
 
 UCLASS()
 class UINJECT_API AInjectTarget : public AActor
@@ -20,10 +18,6 @@ private:
 public:	
 	// Sets default values for this actor's properties
 	AInjectTarget();
-	
-	template<typename T>
-	UFUNCTION(BlueprintCallable)
-	void Func123(T* df);
 
 protected:
 	// Called when the game starts or when spawned
@@ -34,17 +28,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void PostRegisterAllComponents() override;
-
-	UFUNCTION(Category=Injection)
-	void TestInjectionCpp(TScriptInterface<IMyInterface> inter);
-
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Custom")
 	USceneComponent* SceneComponent;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Custom")
 	UActorContext* ActorContext;
 };
-
-template <typename T>
-void AInjectTarget::Func123(T* df)
-{
-}

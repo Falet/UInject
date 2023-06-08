@@ -1,5 +1,6 @@
 ﻿#pragma once
-#include "UDiContainer.h"
+
+class UDiContainer;
 
 class ToolsForContainer
 {
