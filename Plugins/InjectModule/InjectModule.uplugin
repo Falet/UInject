@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "InjectModule",
+	"Description": "Plugin DI",
+	"Category": "Other",
+	"CreatedBy": "Falet",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"SupportedTargetPlatforms": [
+		"Win64"
+	],
+	"Modules": [
+		{
+			"Name": "InjectModule",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
