@@ -14,22 +14,29 @@ public:
 	UDiContainer* PreviousContainer;
 
 	template <class T>
-	BindUClassInject<T>* BindUClass();
+	BindUClassInject<T>* BindClass();
 	template <class T>
-	BindUInterfaceInject<T>* BindUInterface();
+	BindUInterfaceInject<T>* BindInterface();
 	template <class T>
-	BindUStructInject<T>* BindUStruct();
+	BindUStructInject<T>* BindStruct();
+	
+	template <class T>
+	BindUClassInject<T> BindUClass();
+	template <class T>
+	BindUInterfaceInject<T> BindUInterface();
+	template <class T>
+	BindUStructInject<T> BindUStruct();
 
 	void** FindObjectInContainer(FProperty* fProperty);
 	void** GetInjectObject(FProperty* fProperty);//move to up class
 	bool CheckDuplicateInContainers(FString className);
 
 	UFUNCTION(BlueprintCallable)
-	void BindClass(UClass* classReflectionData, UObject* classObj);
+	void BindUClassFromBlueprint(UClass* classReflectionData, UObject* classObj);
 	UFUNCTION(BlueprintCallable)
-	void BindInterface(TSubclassOf<UInterface> interfaceUClass, UObject* interfaceObj);
+	void BindUInterfaceFromBlueprint(TSubclassOf<UInterface> interfaceUClass, UObject* interfaceObj);
 	UFUNCTION(BlueprintCallable)
-	void BindFactory(TSubclassOf<UInjectFactory> factoryUClass, UInjectFactory* factoryObj = nullptr);
+	void BindUFactoryFromBlueprint(TSubclassOf<UInjectFactory> factoryUClass, UInjectFactory* factoryObj = nullptr);
 
 private:
 	TMap<FString , void*> _container = TMap<FString , void*>();
@@ -37,19 +44,35 @@ private:
 };
 
 template <class T>
-BindUClassInject<T>* UDiContainer::BindUClass()
+BindUClassInject<T>* UDiContainer::BindClass()
 {
-	return new BindUClassInject<T>(&_container);
+	
 }
 
 template <class T>
-BindUInterfaceInject<T>* UDiContainer::BindUInterface()
+BindUInterfaceInject<T>* UDiContainer::BindInterface()
 {
-	return new BindUInterfaceInject<T>(&_container);
 }
 
 template <class T>
-BindUStructInject<T>* UDiContainer::BindUStruct()
+BindUStructInject<T>* UDiContainer::BindStruct()
 {
-	return new BindUStructInject<T>(&_container);
+}
+
+template <class T>
+BindUClassInject<T> UDiContainer::BindUClass()
+{
+	return BindUClassInject<T>(&_container);
+}
+
+template <class T>
+BindUInterfaceInject<T> UDiContainer::BindUInterface()
+{
+	return BindUInterfaceInject<T>(&_container);
+}
+
+template <class T>
+BindUStructInject<T> UDiContainer::BindUStruct()
+{
+	return BindUStructInject<T>(&_container);
 }

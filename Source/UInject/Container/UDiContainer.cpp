@@ -60,7 +60,7 @@ bool UDiContainer::CheckDuplicateInContainers(FString className)
 	return true;
 }
 
-void UDiContainer::BindClass(UClass* classReflectionData, UObject* classObj)
+void UDiContainer::BindUClassFromBlueprint(UClass* classReflectionData, UObject* classObj)
 {
 	if (classReflectionData && classObj)
 	{
@@ -79,7 +79,7 @@ void UDiContainer::BindClass(UClass* classReflectionData, UObject* classObj)
 	}
 }
 
-void UDiContainer::BindInterface(TSubclassOf<UInterface> interfaceUClass, UObject* interfaceObj)
+void UDiContainer::BindUInterfaceFromBlueprint(TSubclassOf<UInterface> interfaceUClass, UObject* interfaceObj)
 {
 	if (interfaceUClass && interfaceObj)
 	{
@@ -102,7 +102,7 @@ void UDiContainer::BindInterface(TSubclassOf<UInterface> interfaceUClass, UObjec
 	}
 }
 
-void UDiContainer::BindFactory(TSubclassOf<UInjectFactory> factoryUClass, UInjectFactory* factoryObj)
+void UDiContainer::BindUFactoryFromBlueprint(TSubclassOf<UInjectFactory> factoryUClass, UInjectFactory* factoryObj)
 {
 	if (factoryUClass)
 	{

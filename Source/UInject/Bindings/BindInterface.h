@@ -2,10 +2,10 @@
 #include "BindFromUInterfaceInject.h"
 
 template <typename T>
-class BindUInterfaceInject final
+class BindInterface final
 {
 public:
-	explicit BindUInterfaceInject(TMap<FString , void*>* container)
+	explicit BindInterface(TMap<FString , void*>* container)
 	{
 		_container = container;
 	}
@@ -18,7 +18,7 @@ private:
 
 template <typename T>
 template <typename R>
-BindFromUInterfaceInject<T, R> BindUInterfaceInject<T>::To()
+BindFromUInterfaceInject<T, R> BindInterface<T>::To()
 {
 	return BindFromUInterfaceInject<T, R>(_container);
 }
